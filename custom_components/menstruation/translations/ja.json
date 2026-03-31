@@ -1,0 +1,82 @@
+{
+  "title": "生理トラッカー",
+  "config": {
+    "step": {
+      "user": {
+        "title": "生理トラッカー",
+        "description": "生理の記録と予測を管理します。",
+        "data": {
+          "person": "人物",
+          "name": "名前"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "名前"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "選択した日を適用",
+      "description": "ルールに従って選択した日に対する生理操作を適用します。",
+      "fields": {
+        "date": {
+          "name": "日付",
+          "description": "適用する日付（YYYY-MM-DD）。"
+        },
+        "person": {
+          "name": "人物",
+          "description": "対象の person entity_id。未指定の場合はユーザーに紐づく人物を使用します。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "フェーズ" },
+      "next_start": { "name": "次回開始" },
+      "next_end": { "name": "次回終了" },
+      "ovulation_day": { "name": "排卵日" },
+      "fertile_start": { "name": "妊娠しやすい開始" },
+      "fertile_end": { "name": "妊娠しやすい終了" },
+      "days_to_next_period": { "name": "次の生理まで（日）" },
+      "days_to_ovulation": { "name": "排卵まで（日）" },
+      "cycle_day": { "name": "周期日" },
+      "period_day": { "name": "生理日" },
+      "calendar_data": { "name": "カレンダーデータ" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "生理中" },
+      "is_safe": { "name": "安全期" },
+      "is_ovulation": { "name": "排卵期" }
+    },
+    "calendar": {
+      "calendar": { "name": "カレンダー" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "生理トラッカー"
+    },
+    "calendar": {
+      "period_recorded": "生理（記録）",
+      "period_predicted": "生理（予測）",
+      "fertile_predicted": "妊娠しやすい期間（予測）"
+    },
+    "errors": {
+      "integration_not_configured": "統合が設定されていません",
+      "multiple_profiles_require_person": "複数のプロファイルが設定されています。人物を指定するか、ユーザーに人物を紐づけてください。",
+      "date_in_future": "日付は未来にできません",
+      "invalid_record_missing_start": "無効な記録：開始日が必要です",
+      "end_before_start": "終了日は開始日より前にできません",
+      "ongoing_exists": "進行中の生理記録があります",
+      "record_not_found": "記録が見つかりません",
+      "calendar_only_period_create": "このカレンダーでは生理イベントのみ作成できます",
+      "calendar_only_period_update": "このカレンダーでは生理イベントのみ更新できます",
+      "calendar_dtstart_dtend_required": "dtstart と dtend が必要です",
+      "calendar_event_end_after_start": "終了は開始より後である必要があります"
+    }
+  }
+}

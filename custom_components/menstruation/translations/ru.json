@@ -1,0 +1,82 @@
+{
+  "title": "Трекер менструации",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Трекер менструации",
+        "description": "Отслеживание записанных периодов и прогнозов.",
+        "data": {
+          "person": "Человек",
+          "name": "Имя"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "Имя"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "Применить выбранный день",
+      "description": "Применить действие для выбранной даты согласно вашим правилам.",
+      "fields": {
+        "date": {
+          "name": "Дата",
+          "description": "Дата для применения (YYYY-MM-DD)."
+        },
+        "person": {
+          "name": "Человек",
+          "description": "entity_id человека. Если не указано, используется человек, связанный с пользователем."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "Фаза" },
+      "next_start": { "name": "Следующее начало" },
+      "next_end": { "name": "Следующий конец" },
+      "ovulation_day": { "name": "День овуляции" },
+      "fertile_start": { "name": "Начало фертильного окна" },
+      "fertile_end": { "name": "Конец фертильного окна" },
+      "days_to_next_period": { "name": "Дней до следующей менструации" },
+      "days_to_ovulation": { "name": "Дней до овуляции" },
+      "cycle_day": { "name": "День цикла" },
+      "period_day": { "name": "День менструации" },
+      "calendar_data": { "name": "Данные календаря" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "Менструация" },
+      "is_safe": { "name": "Безопасный период" },
+      "is_ovulation": { "name": "Овуляция" }
+    },
+    "calendar": {
+      "calendar": { "name": "Календарь" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "Трекер менструации"
+    },
+    "calendar": {
+      "period_recorded": "Менструация (записано)",
+      "period_predicted": "Менструация (прогноз)",
+      "fertile_predicted": "Фертильное окно (прогноз)"
+    },
+    "errors": {
+      "integration_not_configured": "Интеграция не настроена",
+      "multiple_profiles_require_person": "Настроено несколько профилей. Укажите человека или свяжите пользователя с человеком.",
+      "date_in_future": "Дата не должна быть в будущем",
+      "invalid_record_missing_start": "Некорректная запись: требуется дата начала",
+      "end_before_start": "Дата окончания не может быть раньше даты начала",
+      "ongoing_exists": "Уже есть текущий период",
+      "record_not_found": "Запись не найдена",
+      "calendar_only_period_create": "В этом календаре можно создавать только события менструации",
+      "calendar_only_period_update": "В этом календаре можно изменять только события менструации",
+      "calendar_dtstart_dtend_required": "Требуются dtstart и dtend",
+      "calendar_event_end_after_start": "Окончание должно быть позже начала"
+    }
+  }
+}

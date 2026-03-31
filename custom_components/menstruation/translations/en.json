@@ -1,0 +1,82 @@
+{
+  "title": "Menstruation Tracker",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Menstruation Tracker",
+        "description": "Track recorded periods and predictions.",
+        "data": {
+          "person": "Person",
+          "name": "Name"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "Name"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "Apply selected day",
+      "description": "Apply the menstruation action for a selected day based on your rules.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "Date to apply (YYYY-MM-DD)."
+        },
+        "person": {
+          "name": "Person",
+          "description": "Person entity_id to apply for. If omitted, Home Assistant user-to-person mapping is used."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "Phase" },
+      "next_start": { "name": "Next start" },
+      "next_end": { "name": "Next end" },
+      "ovulation_day": { "name": "Ovulation day" },
+      "fertile_start": { "name": "Fertile start" },
+      "fertile_end": { "name": "Fertile end" },
+      "days_to_next_period": { "name": "Days to next period" },
+      "days_to_ovulation": { "name": "Days to ovulation" },
+      "cycle_day": { "name": "Cycle day" },
+      "period_day": { "name": "Period day" },
+      "calendar_data": { "name": "Calendar data" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "Is period" },
+      "is_safe": { "name": "Is safe" },
+      "is_ovulation": { "name": "Is ovulation" }
+    },
+    "calendar": {
+      "calendar": { "name": "Calendar" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "Menstruation Tracker"
+    },
+    "calendar": {
+      "period_recorded": "Period (Recorded)",
+      "period_predicted": "Period (Predicted)",
+      "fertile_predicted": "Fertile Window (Predicted)"
+    },
+    "errors": {
+      "integration_not_configured": "Integration not configured",
+      "multiple_profiles_require_person": "Multiple profiles are configured; please specify a person or link this user to a person.",
+      "date_in_future": "Date must not be in the future",
+      "invalid_record_missing_start": "Invalid record: start is required",
+      "end_before_start": "End date cannot be earlier than start date",
+      "ongoing_exists": "Ongoing period exists",
+      "record_not_found": "Record not found",
+      "calendar_only_period_create": "Only period events can be created on this calendar",
+      "calendar_only_period_update": "Only period events can be updated on this calendar",
+      "calendar_dtstart_dtend_required": "dtstart and dtend are required",
+      "calendar_event_end_after_start": "Event end must be after start"
+    }
+  }
+}

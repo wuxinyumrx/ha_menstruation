@@ -1,0 +1,82 @@
+{
+  "title": "经期追踪",
+  "config": {
+    "step": {
+      "user": {
+        "title": "经期追踪",
+        "description": "记录经期并提供预测。",
+        "data": {
+          "person": "人员",
+          "name": "名称"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "名称"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "应用所选日期",
+      "description": "按规则对所选日期执行经期操作。",
+      "fields": {
+        "date": {
+          "name": "日期",
+          "description": "要应用的日期（YYYY-MM-DD）。"
+        },
+        "person": {
+          "name": "人员",
+          "description": "要操作的人员 entity_id。不填则使用当前用户关联的人员。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "阶段" },
+      "next_start": { "name": "下次开始" },
+      "next_end": { "name": "下次结束" },
+      "ovulation_day": { "name": "排卵日" },
+      "fertile_start": { "name": "易孕开始" },
+      "fertile_end": { "name": "易孕结束" },
+      "days_to_next_period": { "name": "距下次经期天数" },
+      "days_to_ovulation": { "name": "距排卵天数" },
+      "cycle_day": { "name": "周期第几天" },
+      "period_day": { "name": "经期第几天" },
+      "calendar_data": { "name": "日历数据" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "是否经期" },
+      "is_safe": { "name": "是否安全期" },
+      "is_ovulation": { "name": "是否排卵期" }
+    },
+    "calendar": {
+      "calendar": { "name": "日历" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "经期追踪"
+    },
+    "calendar": {
+      "period_recorded": "经期（记录）",
+      "period_predicted": "经期（预测）",
+      "fertile_predicted": "易孕期（预测）"
+    },
+    "errors": {
+      "integration_not_configured": "集成尚未配置",
+      "multiple_profiles_require_person": "已配置多个档案，请指定人员或将当前用户关联到人员。",
+      "date_in_future": "日期不能是未来",
+      "invalid_record_missing_start": "无效记录：缺少开始日期",
+      "end_before_start": "结束日期不能早于开始日期",
+      "ongoing_exists": "存在进行中的经期记录",
+      "record_not_found": "未找到记录",
+      "calendar_only_period_create": "此日历只允许创建经期事件",
+      "calendar_only_period_update": "此日历只允许更新经期事件",
+      "calendar_dtstart_dtend_required": "必须提供开始和结束时间（dtstart/dtend）",
+      "calendar_event_end_after_start": "结束必须晚于开始"
+    }
+  }
+}

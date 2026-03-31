@@ -1,0 +1,7 @@
+{
+  "name": "Menstruation Tracker",
+  "render_readme": true,
+  "domains": ["sensor", "binary_sensor", "calendar"],
+  "iot_class": "Local Push",
+  "homeassistant": "2024.1.0"
+}

@@ -1,0 +1,82 @@
+{
+  "title": "Suivi des règles",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Suivi des règles",
+        "description": "Suivez les règles enregistrées et les prédictions.",
+        "data": {
+          "person": "Personne",
+          "name": "Nom"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "Nom"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "Appliquer le jour sélectionné",
+      "description": "Appliquer l'action menstruelle pour une date selon vos règles.",
+      "fields": {
+        "date": {
+          "name": "Date",
+          "description": "Date à appliquer (YYYY-MM-DD)."
+        },
+        "person": {
+          "name": "Personne",
+          "description": "entity_id de la personne ciblée. Si omis, la personne liée à l’utilisateur sera utilisée."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "Phase" },
+      "next_start": { "name": "Prochain début" },
+      "next_end": { "name": "Prochaine fin" },
+      "ovulation_day": { "name": "Jour d’ovulation" },
+      "fertile_start": { "name": "Début fenêtre fertile" },
+      "fertile_end": { "name": "Fin fenêtre fertile" },
+      "days_to_next_period": { "name": "Jours avant prochaines règles" },
+      "days_to_ovulation": { "name": "Jours avant ovulation" },
+      "cycle_day": { "name": "Jour du cycle" },
+      "period_day": { "name": "Jour des règles" },
+      "calendar_data": { "name": "Données du calendrier" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "En règles" },
+      "is_safe": { "name": "Période sûre" },
+      "is_ovulation": { "name": "Ovulation" }
+    },
+    "calendar": {
+      "calendar": { "name": "Calendrier" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "Suivi des règles"
+    },
+    "calendar": {
+      "period_recorded": "Règles (enregistrées)",
+      "period_predicted": "Règles (prévues)",
+      "fertile_predicted": "Fenêtre fertile (prévue)"
+    },
+    "errors": {
+      "integration_not_configured": "Intégration non configurée",
+      "multiple_profiles_require_person": "Plusieurs profils sont configurés. Veuillez spécifier une personne ou lier cet utilisateur à une personne.",
+      "date_in_future": "La date ne doit pas être dans le futur",
+      "invalid_record_missing_start": "Enregistrement invalide : la date de début est requise",
+      "end_before_start": "La date de fin ne peut pas être antérieure à la date de début",
+      "ongoing_exists": "Une période en cours existe",
+      "record_not_found": "Enregistrement introuvable",
+      "calendar_only_period_create": "Seuls les événements de règles peuvent être créés sur ce calendrier",
+      "calendar_only_period_update": "Seuls les événements de règles peuvent être modifiés sur ce calendrier",
+      "calendar_dtstart_dtend_required": "dtstart et dtend sont requis",
+      "calendar_event_end_after_start": "La fin doit être après le début"
+    }
+  }
+}

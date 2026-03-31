@@ -1,0 +1,82 @@
+{
+  "title": "월경 추적기",
+  "config": {
+    "step": {
+      "user": {
+        "title": "월경 추적기",
+        "description": "월경 기록과 예측을 관리합니다.",
+        "data": {
+          "person": "사람",
+          "name": "이름"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "이름"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "선택한 날짜 적용",
+      "description": "규칙에 따라 선택한 날짜에 월경 동작을 적용합니다.",
+      "fields": {
+        "date": {
+          "name": "날짜",
+          "description": "적용할 날짜(YYYY-MM-DD)."
+        },
+        "person": {
+          "name": "사람",
+          "description": "대상 person entity_id. 생략하면 사용자에 연결된 사람을 사용합니다."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "단계" },
+      "next_start": { "name": "다음 시작" },
+      "next_end": { "name": "다음 종료" },
+      "ovulation_day": { "name": "배란일" },
+      "fertile_start": { "name": "가임 시작" },
+      "fertile_end": { "name": "가임 종료" },
+      "days_to_next_period": { "name": "다음 월경까지(일)" },
+      "days_to_ovulation": { "name": "배란까지(일)" },
+      "cycle_day": { "name": "주기 일" },
+      "period_day": { "name": "월경 일" },
+      "calendar_data": { "name": "캘린더 데이터" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "월경중" },
+      "is_safe": { "name": "안전기" },
+      "is_ovulation": { "name": "배란기" }
+    },
+    "calendar": {
+      "calendar": { "name": "캘린더" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "월경 추적기"
+    },
+    "calendar": {
+      "period_recorded": "월경(기록됨)",
+      "period_predicted": "월경(예측됨)",
+      "fertile_predicted": "가임기(예측됨)"
+    },
+    "errors": {
+      "integration_not_configured": "통합이 구성되지 않았습니다",
+      "multiple_profiles_require_person": "여러 프로필이 구성되었습니다. 사람을 지정하거나 사용자를 사람에 연결하세요.",
+      "date_in_future": "날짜는 미래일 수 없습니다",
+      "invalid_record_missing_start": "잘못된 기록: 시작일이 필요합니다",
+      "end_before_start": "종료일은 시작일보다 빠를 수 없습니다",
+      "ongoing_exists": "진행 중인 월경 기록이 있습니다",
+      "record_not_found": "기록을 찾을 수 없습니다",
+      "calendar_only_period_create": "이 캘린더에서는 월경 이벤트만 만들 수 있습니다",
+      "calendar_only_period_update": "이 캘린더에서는 월경 이벤트만 수정할 수 있습니다",
+      "calendar_dtstart_dtend_required": "dtstart 및 dtend가 필요합니다",
+      "calendar_event_end_after_start": "종료는 시작 이후여야 합니다"
+    }
+  }
+}

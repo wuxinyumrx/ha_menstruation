@@ -1,0 +1,82 @@
+{
+  "title": "Seguimiento menstrual",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Seguimiento menstrual",
+        "description": "Sigue los periodos registrados y las predicciones.",
+        "data": {
+          "person": "Persona",
+          "name": "Nombre"
+        }
+      },
+      "init": {
+        "data": {
+          "name": "Nombre"
+        }
+      }
+    }
+  },
+  "services": {
+    "apply_day": {
+      "name": "Aplicar día seleccionado",
+      "description": "Aplicar la acción menstrual para una fecha según tus reglas.",
+      "fields": {
+        "date": {
+          "name": "Fecha",
+          "description": "Fecha a aplicar (YYYY-MM-DD)."
+        },
+        "person": {
+          "name": "Persona",
+          "description": "entity_id de la persona objetivo. Si se omite, se usa la persona vinculada al usuario."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "phase": { "name": "Fase" },
+      "next_start": { "name": "Próximo inicio" },
+      "next_end": { "name": "Próximo fin" },
+      "ovulation_day": { "name": "Día de ovulación" },
+      "fertile_start": { "name": "Inicio de ventana fértil" },
+      "fertile_end": { "name": "Fin de ventana fértil" },
+      "days_to_next_period": { "name": "Días hasta el próximo periodo" },
+      "days_to_ovulation": { "name": "Días hasta la ovulación" },
+      "cycle_day": { "name": "Día del ciclo" },
+      "period_day": { "name": "Día del periodo" },
+      "calendar_data": { "name": "Datos del calendario" }
+    },
+    "binary_sensor": {
+      "is_period": { "name": "En periodo" },
+      "is_safe": { "name": "Periodo seguro" },
+      "is_ovulation": { "name": "Ovulación" }
+    },
+    "calendar": {
+      "calendar": { "name": "Calendario" }
+    }
+  },
+  "localize": {
+    "integration": {
+      "name": "Seguimiento menstrual"
+    },
+    "calendar": {
+      "period_recorded": "Periodo (registrado)",
+      "period_predicted": "Periodo (predicho)",
+      "fertile_predicted": "Ventana fértil (predicha)"
+    },
+    "errors": {
+      "integration_not_configured": "Integración no configurada",
+      "multiple_profiles_require_person": "Hay varios perfiles configurados. Especifique una persona o vincule este usuario a una persona.",
+      "date_in_future": "La fecha no debe estar en el futuro",
+      "invalid_record_missing_start": "Registro no válido: se requiere la fecha de inicio",
+      "end_before_start": "La fecha de fin no puede ser anterior a la fecha de inicio",
+      "ongoing_exists": "Existe un periodo en curso",
+      "record_not_found": "Registro no encontrado",
+      "calendar_only_period_create": "Solo se pueden crear eventos de periodo en este calendario",
+      "calendar_only_period_update": "Solo se pueden actualizar eventos de periodo en este calendario",
+      "calendar_dtstart_dtend_required": "Se requieren dtstart y dtend",
+      "calendar_event_end_after_start": "El final debe ser posterior al inicio"
+    }
+  }
+}

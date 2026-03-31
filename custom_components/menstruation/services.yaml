@@ -1,0 +1,10 @@
+apply_day:
+  name: Apply selected day
+  description: Apply the menstruation action for a selected day based on your rules.
+  fields:
+    date:
+      name: Date
+      description: Date to apply (YYYY-MM-DD).
+    person:
+      name: Person
+      description: Person entity_id to apply for. If omitted, Home Assistant user-to-person mapping is used.
